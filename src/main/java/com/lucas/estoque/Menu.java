@@ -11,7 +11,6 @@ public class Menu {
     
     public void selecionarMenu() {
         do{ 
-        
             System.out.println("---------- MENU ----------");
             System.out.println("1 - Adicionar produto");
             System.out.println("2 - Remover produto");
@@ -23,50 +22,40 @@ public class Menu {
                 
                 case 0:
                     System.out.println("Saindo...");
-                    limparTela();
                 break;
                 
                 case 1:
                     Produto item = new Produto();
-                    System.out.println("ID do produto: ");
+                    System.out.println("**** ADICIONAR ITEM ****");
+                    System.out.print("ID do produto: ");
                     item.id = sc.nextInt();
                     sc.nextLine();
                     
-                    System.out.println("Nome do produto: ");
+                    System.out.print("Nome do produto: ");
                     item.nome = sc.nextLine();
                     
-                    System.out.println("Quantidade do produto: ");
+                    System.out.print("Quantidade do produto: ");
                     item.quantidade = sc.nextInt();
                     
                     estoque.adicionarProduto(item);
-                    limparTela();
                 break;
                 
                 case 2:
                     int id;
-                    System.out.println("ID do produto: ");
+                    System.out.println("**** REMOVER ITEM ****");
+                    System.out.print("ID do produto: ");
                     id = sc.nextInt();
                     estoque.removerProduto(id);
-                    limparTela();
                 break;
                 
                 case 3:
                     estoque.listarEstoque();
-                    limparTela();
                 break;
                 
                 default :
                     System.out.println("Selecione uma opcao valida");
-                    limparTela();
                 break;
             }
         }while(opcao != 0);
-    }
-    
-    public static void limparTela() {
-       for(int i = 0; i < 40; i++){
-           System.out.println();
-       }
-   }
-    
+    }   
 }
