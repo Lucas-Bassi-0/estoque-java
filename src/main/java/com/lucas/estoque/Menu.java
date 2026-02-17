@@ -56,6 +56,15 @@ public class Menu {
                     System.out.println("Selecione uma opcao valida");
                 break;
             }
+            
+            limparConsole();
         }while(opcao != 0);
-    }   
+    }
+    
+    public void limparConsole() {
+        // Imprime 15 linhas em branco
+        for (int i = 0; i < 15; i++) {
+            System.out.println();
+        }
+    }
 }
